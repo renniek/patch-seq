@@ -34,4 +34,6 @@ sbatch alignment.sbatch <SPECIES> <fastq_file1> <fastq_file2> <fastq_file3> ... 
 
 Note, enter which species you are aligning the sequencing data to (e.g., mouse or human) as the first argument after the script, and then copy and past .fastq file names for the remaining arguments separated by a space. You can do as many as you want, but generally you can't run more than 10-20 in the timelimit of the script (24h). 
 
+_Be sure to check the species of your sequencing data to ensure that you are aligning to the correct reference genome._ If you align incorrectly, your percent of mapped reads in QC reports will be very low (>10%).
+
 
