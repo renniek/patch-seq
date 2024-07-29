@@ -15,7 +15,9 @@ You should have everything you need to start at Step 4, as I have already genera
 If you would like to start with Steps 1-3 (e.g., you want to add or update a reference genome from what is already on the server) see details below.
 
 **Step 3**: To QC your particular dataset, first run: 
+
 cd /oak/stanford/groups/sfowen/Data/PatchSeqAlignment
+
 nano run_fastqc.sbatch 
 
 This will allow you to view and edit run_fastqc.sbatch. Change the **dir** variable to the directory where your raw sequencing data is stored. Press CTRL+O ENTER to save and CTRL+X to exit. Then run:
