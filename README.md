@@ -29,10 +29,11 @@ This script will look into the current directory and check if FastQC has already
 
 **Step 4**: To align your sequencing data to the reference genome, run:
 ```
-sbatch alignment.sbatch <SPECIES> <fastq_file1> <fastq_file2> <fastq_file3> ... <fastq_fileN>
+cd /oak/stanford/groups/sfowen/Data/scRNA_Data/<your_particular_directory>
+sbatch /oak/stanford/groups/sfowen/Data/PatchSeqAlignment/alignment.sbatch <SPECIES> <fastq_R1_file1> <fastq_R1_file2> <fastq_R1_file3> ... <fastq_R1_fileN>
 ```
 
-Note, enter which species you are aligning the sequencing data to (e.g., mouse or human) as the first argument after the script, and then copy and past .fastq file names for the remaining arguments separated by a space. You can do as many as you want, but generally you can't run more than 10-20 in the timelimit of the script (24h). 
+Note, enter which species you are aligning the sequencing data to (e.g., mouse or human) as the first argument after the script, and then copy and past **R1** **.fastq file names for the remaining arguments separated by a space. It is important that you put the R1 file name, as the script will automatically find the paired R2 read. You can do as many as you want, but generally you can't run more than 10-20 in the timelimit of the script (24h). 
 
 _Be sure to check the species of your sequencing data to ensure that you are aligning to the correct reference genome._ If you align incorrectly, your percent of mapped reads in QC reports will be very low (>10%).
 
