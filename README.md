@@ -22,7 +22,8 @@ nano run_fastqc.sbatch
 ```
 
 This will allow you to view and edit run_fastqc.sbatch. Change the **dir** variable to the directory where your raw sequencing data is stored. Press CTRL+O ENTER to save and CTRL+X to exit. Then run:
-sbatch run_fastq.sbatch 
+
+`sbatch run_fastq.sbatch`
 
 This script will look into the current directory and check if FastQC has already been run for a given sequencing file. If not, it runs FastQC. At the end, it runs multiQC to compile a readable report with all samples. 
 
