@@ -27,10 +27,11 @@ This will allow you to view and edit run_fastqc.sbatch. Change the **dir** varia
 
 This script will look into the current directory and check if FastQC has already been run for a given sequencing file. If not, it runs FastQC. At the end, it runs multiQC to compile a readable report with all samples. 
 
-**Step 4**: To align your sequencing data to the reference genome, 
+**Step 4**: To align your sequencing data to the reference genome, run:
+```
+sbatch alignment.sbatch <SPECIES> <fastq_file1> <fastq_file2> <fastq_file3> ... <fastq_fileN>
+```
 
-
-
-
+Note, enter which species you are aligning the sequencing data to (e.g., mouse or human) as the first argument after the script, and then copy and past .fastq file names for the remaining arguments separated by a space. You can do as many as you want, but generally you can't run more than 10-20 in the timelimit of the script (24h). 
 
 
