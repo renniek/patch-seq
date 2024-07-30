@@ -50,4 +50,5 @@ Note, enter which species you are aligning the sequencing data to (e.g., mouse o
 
 _Be sure to check the species of your sequencing data to ensure that you are aligning to the correct reference genome._ If you align incorrectly, your percent of mapped reads in QC reports will be very low (<10%).
 
+If you used fastp to trim reads based on some issue (e.g., adaptor contamination), make sure to run on your 
 
