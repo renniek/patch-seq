@@ -29,7 +29,7 @@ One quality control step after running FastQC/MultiQC is adapter trimming. This 
 
 ```
 cd /oak/stanford/groups/sfowen/Data/scRNA_Data/<your_particular_directory>
-sbatch run_fastp.sbatch <sample_X_R1>.fastq.gz
+sbatch /oak/stanford/groups/sfowen/Data/PatchSeqAlignment/run_fastp.sbatch <sample_X_R1>.fastq.gz
 ```
 This script will automatically trim both R1 and R2 reads, and then save them as <sample_X_R1>.trimmed.fastq.gz and <sample_X_R2>.trimmed.fastq.gz
 
