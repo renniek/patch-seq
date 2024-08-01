@@ -7,11 +7,11 @@
 #SBATCH -c 1
 #SBATCH --mem=16GB
 
-dir='/oak/stanford/groups/sfowen/Data/scRNA_Data/E200013499-SGSC-Owen-JC-22666/'
 module load biology
 module load fastqc 
+module load py-numpy/1.24.2_py39
 
-for entry in $dir/*".fastq.gz"; do 
+for entry in *".fastq.gz"; do 
 	if [ -f "${entry%%.*}_fastqc.html" ]
 	then 
 		echo "FastQC already run for "$entry". Skipping and moving on to next entry."
@@ -22,9 +22,10 @@ for entry in $dir/*".fastq.gz"; do
 done
 
 # activate virtual environment to compile fastqc files into a report using multiqc
-source RNA_seq/bin/activate 
-
-multiqc .
+export LD_LIBRARY_PATH=/share/software/user/open/python/3.9.0/lib
+source /oak/stanford/groups/sfowen/Data/PatchSeqAlignment/RNA_seq/bin/activate 
+#cd $dir
+python /oak/stanford/groups/sfowen/Data/PatchSeqAlignment/run_multiqc.py
 
 
 
