@@ -52,3 +52,5 @@ _Be sure to check the species of your sequencing data to ensure that you are ali
 
 If you used fastp to trim reads based on some issue (e.g., adaptor contamination), make sure to input the correct fastq file name, or **.trimmed**.fastq.gz. 
 
+https://multiqc.info/docs/usage/scripts/#writing-report
+
