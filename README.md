@@ -18,13 +18,9 @@ If you would like to start with Steps 1-3 (e.g., you want to add or update a ref
 **Step 3**: To QC your particular dataset, in terminal after logging into Sherlock type the following commands followed by ENTER: 
 
 ```
-cd /oak/stanford/groups/sfowen/Data/PatchSeqAlignment
-nano run_fastqc.sbatch
+cd /oak/stanford/groups/sfowen/Data/scRNA_Data/<your_particular_directory> 
+sbatch /oak/stanford/groups/sfowen/Data/PatchSeqAlignment/run_fastqc.sbatch
 ```
-
-This will allow you to view and edit run_fastqc.sbatch. Change the **dir** variable to the directory where your raw sequencing data is stored. Press CTRL+O ENTER to save and CTRL+X to exit. Then run:
-
-`sbatch run_fastqc.sbatch`
 
 This script will look into the current directory and check if FastQC has already been run for a given sequencing file. If not, it runs FastQC. At the end, it runs multiQC to compile a readable report with all samples. 
 
