@@ -8,7 +8,6 @@
 #SBATCH --mem=64GB
 species=$1
 GENOMEDIR='/oak/stanford/groups/sfowen/Data/PatchSeqAlignment/'$species'_genome_processing/'
-DATADIR='/oak/stanford/groups/sfowen/Data/scRNA_Data/E200013499-SGSC-Owen-JC-22666/'
 
 module load biology
 module load star 
