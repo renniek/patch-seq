@@ -25,11 +25,11 @@ sbatch /oak/stanford/groups/sfowen/Data/PatchSeqAlignment/run_fastqc.sbatch
 This script will look into the current directory and check if FastQC has already been run for a given sequencing file. If not, it runs FastQC. At the end, it runs multiQC to compile a readable report with all samples. 
 
 **Step 4**
-One quality control step after running FastQC/MultiQC is adapter trimming. This detects if sequencing adapters have been mistakenly incorporated into a read. If you see in a report that a given sample is contaminated by adapters, e.g., sample_X then do the following: 
+One quality control step after running FastQC/MultiQC is adapter trimming. This detects if sequencing adapters have been mistakenly incorporated into a read. If you see in a report that a given sample is contaminated by adapters, e.g., sample_X then do the following (not on the Oak server, but on your local computer - unfortunately I have not found a way to run this package on Oak): 
 
 ```
-cd /oak/stanford/groups/sfowen/Data/scRNA_Data/<your_particular_directory>
-sbatch /oak/stanford/groups/sfowen/Data/PatchSeqAlignment/run_fastp.sbatch <sample_X_R1>.fastq.gz
+cd /Volumes/sfowen/Data/scRNA_Data/<your_particular_directory>
+bash /Volumes/sfowen/Data/PatchSeqAlignment/run_fastp.sh <sample_X_R1>.fastq.gz
 ```
 This script will automatically trim both R1 and R2 reads, and then save them as <sample_X_R1>.trimmed.fastq.gz and <sample_X_R2>.trimmed.fastq.gz
 
