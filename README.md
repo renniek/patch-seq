@@ -33,7 +33,7 @@ bash /Volumes/sfowen/Data/PatchSeqAlignment/run_fastp.sh <sample_X_R1>.fastq.gz
 ```
 This script will automatically trim both R1 and R2 reads, and then save them as <sample_X_R1>.trimmed.fastq.gz and <sample_X_R2>.trimmed.fastq.gz
 
-Note that you will want to rerun fastqc.sbatch for the trimmed sample to make sure that the trimming removed the adapter contamination, for example. To do this, run: 
+Note that you will want to rerun fastqc.sbatch for the trimmed sample to make sure that the trimming removed the adapter contamination, for example. To do this, just rerun the same command in Step 3. The script will go through and remove any existing fast_qc files with *trimmed* in the heading, such that you will get a new report based on the latest round of trimming. 
 
 **Step 5**: To align your sequencing data to the reference genome, run:
 
